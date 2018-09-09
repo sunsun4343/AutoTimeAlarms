@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dealy">
+    <item>5초</item>
+    <item>10초</item>
+    <item>15초</item>
+    <item>20초</item>
+    <item>30초</item>
+    <item>1분</item>
+    <item>2분</item>
+    <item>3분</item>
+    <item>5분</item>
+    <item>10분</item>
+    <item>15분</item>
+</string-array>
+</resources>

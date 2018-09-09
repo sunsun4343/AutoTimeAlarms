@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">AutoTimeAlarms</string>
+    <string name="app_name">자동시간알림기</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="trem">간격</string>
+    <string name="speechoption">말하기 설정</string>
+    <string name="ammp">AM/PM</string>
+    <string name="hour">시</string>
+    <string name="second">초</string>
+    <string name="volum">소리 설정</string>
+    <string name="start">시작</string>
+    <string name="stop">정지</string>
+    <string name="reset">초기화</string>
+    <string name="setting">설정</string>
+    <string name="minute">분</string>
+    <string name="help">음성이 나오지 않는 경우(TTS설치)</string>
 </resources>

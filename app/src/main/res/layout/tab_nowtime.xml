@@ -1,0 +1,168 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="ts.u.autotimealarms.MainActivity" >
+
+    <ImageView
+        android:id="@+id/ImageView_hour0"
+        android:layout_width="50dp"
+        android:layout_height="83dp"
+        android:layout_margin="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/number0" />
+
+    <ImageView
+        android:id="@+id/imageView_hour1"
+        android:layout_width="50dp"
+        android:layout_height="83dp"
+        android:layout_alignTop="@+id/ImageView_hour0"
+        android:layout_toRightOf="@+id/ImageView_hour0"
+        android:src="@drawable/number0" />
+
+    <ImageView
+        android:id="@+id/ImageView_minute0"
+        android:layout_width="50dp"
+        android:layout_height="83dp"
+        android:layout_alignTop="@+id/imageView_hour1"
+        android:layout_toRightOf="@+id/ImageView02"
+        android:src="@drawable/number0" />
+
+    <ImageView
+        android:id="@+id/ImageView_minute1"
+        android:layout_width="50dp"
+        android:layout_height="83dp"
+        android:layout_alignTop="@+id/ImageView_minute0"
+        android:layout_toRightOf="@+id/ImageView_minute0"
+        android:src="@drawable/number0" />
+
+    <ImageView
+        android:id="@+id/ImageView_second1"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/ImageView_scond0"
+        android:layout_toRightOf="@+id/ImageView_scond0"
+        android:src="@drawable/number0" />
+
+    <ImageView
+        android:id="@+id/ImageView02"
+        android:layout_width="20dp"
+        android:layout_height="83dp"
+        android:layout_alignTop="@+id/imageView_hour1"
+        android:layout_toRightOf="@+id/imageView_hour1"
+        android:src="@drawable/breakpoint" />
+
+    <ImageView
+        android:id="@+id/ImageView05"
+        android:layout_width="20dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/ImageView_scond0"
+        android:layout_toRightOf="@+id/ImageView_minute1"
+        android:src="@drawable/breakpoint" />
+
+    <ImageView
+        android:id="@+id/ImageView_scond0"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/ImageView_minute1"
+        android:layout_toRightOf="@+id/ImageView05"
+        android:src="@drawable/number0" />
+
+    <ImageView
+        android:id="@+id/ImageView_ampm"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/ImageView_scond0"
+        android:layout_alignTop="@+id/ImageView_minute1"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/am" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ImageView_hour0"
+        android:text="@string/trem"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white" />
+
+    <Spinner
+        android:id="@+id/spinner_term"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/spinner_term"
+        android:layout_margin="5dp"
+        android:text="@string/speechoption"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white" />
+
+    <CheckBox
+        android:id="@+id/checkBox_ampm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:text="@string/ammp"
+        android:textColor="@color/white" />
+
+    <CheckBox
+        android:id="@+id/CheckBox_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/CheckBox_hour"
+        android:layout_alignBottom="@+id/CheckBox_hour"
+        android:layout_toRightOf="@+id/CheckBox_hour"
+        android:text="@string/second"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/checkBox_ampm"
+        android:layout_margin="5dp"
+        android:text="@string/volum"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white" />
+
+    <SeekBar
+        android:id="@+id/seekBar_volume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView3" />
+
+    <CheckBox
+        android:id="@+id/CheckBox_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_toRightOf="@+id/checkBox_ampm"
+        android:text="@string/hour"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/button_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/seekBar_volume"
+        android:text="@string/help" />
+
+ </RelativeLayout>
