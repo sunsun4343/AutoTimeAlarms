@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.kakao.adfit.ads.AdListener;
 import com.kakao.adfit.ads.ba.BannerAdView;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
         //Manager Setting
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "GLGame");
+        wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "GLGame:tag");
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mTts = new TextToSpeech(this, this);
 
@@ -181,36 +182,36 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         }
     }
 
+
+    private void toast(String message) {
+        if (adView == null) return;
+        Toast.makeText(adView.getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
     private void initAdFit() {
         // AdFit sdk 초기화 시작
         adView = (BannerAdView) findViewById(R.id.adview);
+        adView.setAdListener(new AdListener() {  // 광고 수신 리스너 설정
 
-        adView.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
-                Log.d(LOGTAG, "onAdLoaded");
+                toast("Banner is loaded");
             }
 
             @Override
-            public void onAdFailed(int code) {
-                Log.d(LOGTAG, "onAdFailed : " + code);
+            public void onAdFailed(int errorCode) {
+                toast("Failed to load banner :: errorCode = " + errorCode);
             }
 
             @Override
             public void onAdClicked() {
-                Log.d(LOGTAG, "onAdClicked");
+                toast("Banner is clicked");
             }
+
         });
 
         // 할당 받은 clientId 설정
         adView.setClientId("DAN-s1dyg5u9jp6d");
-
-        // 광고 갱신 시간 : 기본 60초
-        // 0 으로 설정할 경우, 갱신하지 않음.
-        adView.setRequestInterval(30);
-
-        // 광고 사이즈 설정
-        adView.setAdUnitSize("320x50");
 
         adView.loadAd();
     }
